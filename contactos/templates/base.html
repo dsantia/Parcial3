@@ -1,0 +1,49 @@
+{% load bootstrap4 %}
+{% bootstrap_css %}
+
+<div class="pos-f-t">
+        <div class="collapse" id="navbarToggleExternalContent">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Agrega y asigna contactos</h5>
+            <span class="text-muted">Funcional para todas las empresas</span>
+          </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'contactos:ListaDepartamento'%}"> Departamento </a>
+        <a class="navbar-brand" href="{% url 'contactos:ListaInscrito'%}"> Inscrito </a>
+	    <a class="navbar-brand" href="{% url 'contactos:ListaTelefono'%}"> Telefono </a>
+        <a class="navbar-brand" href="{% url 'contactos:ListaResponsable'%}"> Responsable </a>
+        <a class="navbar-brand" href="{% url 'contactos:ListaContacto'%}"> Contacto </a>
+        </nav>
+      </div>
+      <head>
+            <title>Agenda</title>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+          </head>
+
+<body>
+        <div class="container">
+               
+                <div class="panel-group">
+                  <div class="panel panel-danger class">
+                    <div class="panel-heading" font>Formulario de Agenda</div>
+                   
+                    <div class="panel-body">
+                            {% block content %}
+                            {% endblock content %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+   
+</body>
+
+{% bootstrap_javascript jquery='full' %}

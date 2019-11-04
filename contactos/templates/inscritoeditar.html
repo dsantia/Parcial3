@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Crear página{% endblock %}
+{% block content %}
+
+<main role="main">
+    <h1 align = "Center">Editar Inscrito</h1>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <div>
+            {% if 'ok' in request.GET %}
+                <p style="color:green" align="center">
+                    Edición Correcta
+                    <a href="{% url 'contactos:DetalleInscrito' inscrito.id %}">Haz click aqui para ver informacion</a>
+                </p>
+            {% endif %}
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <div class="text-center">
+                    <input type="submit" class="btn btn-primary btn-block" value="Actualizar Inscrito" />
+                </div>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

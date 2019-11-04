@@ -1,0 +1,12 @@
+{%  extends 'base.html' %}
+{% block content %}
+{% load bootstrap4 %}
+<h1 align = "Center">Nuevo Departamento</h1>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+	{% bootstrap_form form %}
+	{% buttons %}
+	<h1 align = "Center">
+	<input class="btn btn-danger" type="submit" value="Guardar"/>
+	{% endbuttons %}
+</form>
+{% endblock %}

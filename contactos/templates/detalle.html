@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{departamento.nombre}}{% endblock %}
+{% block content %}
+
+<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h2 class="section-heading mb-4">{{departamento.nombre}}</h2>
+        <div>
+            {{departamento.descripcion|safe}}
+        </div>
+
+        <div>
+            <p><a class="btn btn-warning" href="{% url 'contactos:EditarDepartamento' departamento.id %}">Editar</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{contacto.contacto_nume}}{% endblock %}
+{% block content %}
+
+<main role="main">
+    <h1 align = "Center">Detalle Contacto</h1>
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h2 class="section-heading mb-4">{{contacto.contacto_num}}</h2>
+        <div>
+            <h2>Persona Inscrita:</h2> {{contacto.inscrito_id}}
+            <p><h2>Persona Responsable:</h2> {{contacto.responsable_id}}</p> 
+        </div>
+
+        <div>
+            <p><a class="btn btn-warning" href="{% url 'contactos:EditarContacto' contacto.id %}">Editar</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Páginas{% endblock %}
+{% block content %}
+<main role="main">
+  <div class="container mb-4">
+    {% for tel in object_list %}
+      <div class="row mt-3">
+        <div class="col-md-9 mx-auto">
+          <h2 class="mb-4">{{tel.telefono}}</h2>
+          <div>
+            <h4>{{tel.compania|striptags|safe|truncatechars:"200"}}</h4>
+            <p><a href="{% url 'contactos:DetalleTelefono' tel.id%}">Leer más</a>
+              {% if request.user.is_staff %}
+                | <a href="{% url 'contactos:EditarTelefono' tel.id%}">Editar</a>
+                | <a href="{% url 'contactos:BorrarTelefono' tel.id%}">Borrar</a>
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="text-center">
+      <a href="{% url 'contactos:NuevoTelefono'%}">
+          <input type="submit" class="btn btn-primary btn-block" clss="fa fa-home" value="Agregar Nuevo Telefono" />
+      </a>
+  </div>
+</main>
+{% endblock %}
